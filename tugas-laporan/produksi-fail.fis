@@ -1,0 +1,59 @@
+[System]
+Name='penjualan'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=21
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='permintaan'
+Range=[0 1]
+NumMFs=3
+MF1='sedikit':'trimf',[0 200 450]
+MF2='sedang':'trimf',[200 600 980]
+MF3='banyak':'trimf',[700 950 1200]
+
+[Input2]
+Name='persediaan'
+Range=[0 1]
+NumMFs=3
+MF1='sedikit':'trimf',[0 30 60]
+MF2='sedang':'trimf',[25 65 100]
+MF3='banyak':'trimf',[70 100 130]
+
+[Output1]
+Name='penjualan'
+Range=[0 1]
+NumMFs=3
+MF1='sedikit':'trimf',[0 300 550]
+MF2='sedang':'trimf',[300 750 1200]
+MF3='banyak':'trimf',[850 1150 1500]
+
+[Rules]
+1 1, 1 (1) : 1
+1 1, 2 (1) : 1
+1 2, 1 (1) : 1
+1 2, 2 (1) : 1
+1 2, 3 (1) : 1
+1 3, 1 (1) : 1
+1 3, 2 (1) : 1
+2 1, 1 (1) : 1
+2 1, 2 (1) : 1
+2 1, 3 (1) : 1
+2 2, 1 (1) : 1
+2 2, 2 (1) : 1
+2 2, 3 (1) : 1
+2 3, 1 (1) : 1
+2 3, 2 (1) : 1
+2 3, 3 (1) : 1
+3 1, 2 (1) : 1
+3 1, 3 (1) : 1
+3 2, 2 (1) : 1
+3 3, 2 (1) : 1
+3 3, 3 (1) : 1

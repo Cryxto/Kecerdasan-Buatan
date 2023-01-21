@@ -1,0 +1,59 @@
+[System]
+Name='produksi_new'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=21
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Permintaan'
+Range=[14868 23432]
+NumMFs=3
+MF1='Sedikit':'trimf',[11290 14870 18450]
+MF2='Sedang':'trimf',[15580 19150 22720]
+MF3='Banyak':'trimf',[19860 23430 27000]
+
+[Input2]
+Name='Persediaan'
+Range=[1170 3190]
+NumMFs=3
+MF1='Sedikit':'trimf',[327.9 1170 2012]
+MF2='Sedang':'trimf',[1338 2180 3022]
+MF3='Banyak':'trimf',[2348 3190 4032]
+
+[Output1]
+Name='Produksi'
+Range=[14105 25000]
+NumMFs=3
+MF1='Sedikit':'trimf',[9560 14100 18640]
+MF2='Sedang':'trimf',[15010 19550 24090]
+MF3='Banyak':'trimf',[20460 25000 29540]
+
+[Rules]
+1 1, 1 (1) : 1
+1 1, 2 (1) : 1
+1 2, 1 (1) : 1
+1 2, 2 (1) : 1
+1 2, 3 (1) : 1
+1 3, 1 (1) : 1
+1 3, 2 (1) : 1
+2 1, 1 (1) : 1
+2 1, 2 (1) : 1
+2 1, 3 (1) : 1
+2 2, 1 (1) : 1
+2 2, 2 (1) : 1
+2 2, 3 (1) : 1
+2 3, 1 (1) : 1
+2 3, 2 (1) : 1
+2 3, 3 (1) : 1
+3 1, 2 (1) : 1
+3 1, 3 (1) : 1
+3 2, 2 (1) : 1
+3 3, 2 (1) : 1
+3 3, 3 (1) : 1
