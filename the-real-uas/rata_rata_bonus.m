@@ -110,7 +110,7 @@ disp(out)
 if out<0 || out>10
     res = 'invalid';
 else
-    res = append("Harapan (Bonus) : ",num2str(out));
+    res = append("Harapan (Bonus) atau Rating : ",num2str(out)," dari 10");
 end
 disp(res)
 msgbox(res);
