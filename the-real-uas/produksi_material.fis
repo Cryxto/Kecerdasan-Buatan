@@ -1,0 +1,73 @@
+[System]
+Name='produksi_material'
+Type='sugeno'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=15
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='Suhu'
+Range=[0 38]
+NumMFs=3
+MF1='RENDAH':'trimf',[18 22 26]
+MF2='NORMAL':'trimf',[22 26 32]
+MF3='TINGGI':'trimf',[26 32 38]
+
+[Input2]
+Name='Kebisingan'
+Range=[0 105]
+NumMFs=3
+MF1='TENANG':'trimf',[35 55 75]
+MF2='AGAK_BISING':'trimf',[55 75 90]
+MF3='BISING':'trimf',[75 90 105]
+
+[Input3]
+Name='Pencahayaan'
+Range=[0 700]
+NumMFs=3
+MF1='REDUP':'trimf',[0 150 300]
+MF2='AGAK_TERANG':'trimf',[150 300 500]
+MF3='TERANG':'trimf',[300 500 700]
+
+[Output1]
+Name='Produksi_Material'
+Range=[0 1]
+NumMFs=15
+MF1='R1':'constant',[148]
+MF2='R2':'constant',[146]
+MF3='R3':'constant',[146]
+MF4='R4':'constant',[136.73]
+MF5='R5':'constant',[135.97]
+MF6='R6':'constant',[49.73]
+MF7='R7':'constant',[152.13]
+MF8='R8':'constant',[150.63]
+MF9='R9':'constant',[141.47]
+MF10='R10':'constant',[140.2]
+MF11='R11':'constant',[142.1]
+MF12='R12':'constant',[142.17]
+MF13='R13':'constant',[141.4]
+MF14='R14':'constant',[133.33]
+MF15='R15':'constant',[133.77]
+
+[Rules]
+1 1 1, 1 (1) : 1
+1 1 3, 2 (1) : 1
+1 2 2, 3 (1) : 1
+1 3 1, 4 (1) : 1
+1 3 3, 5 (1) : 1
+2 1 1, 6 (1) : 1
+2 1 3, 7 (1) : 1
+2 2 2, 8 (1) : 1
+2 3 1, 9 (1) : 1
+2 3 3, 10 (1) : 1
+3 1 1, 11 (1) : 1
+3 1 3, 12 (1) : 1
+3 2 2, 13 (1) : 1
+3 3 1, 14 (1) : 1
+3 3 3, 15 (1) : 1
